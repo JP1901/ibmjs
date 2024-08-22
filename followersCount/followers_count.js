@@ -10,10 +10,15 @@ function displayCount(){
     document.getElementById('countDisplay').innerHTML=count;
 }
 
-function checkCountValue(){
-    if(count%10===0){
-        let decSeguidor = count;
-        alert(`Felicitaciones llegaste a ${decSeguidor} seguidores.`);
-    }
+function checkCountValue(){    
+        if(count%10===0){
+            let decSeguidor = count;
+            alert(`Felicitaciones llegaste a ${decSeguidor} seguidores.`);
+        }  
 
+}
+
+function resetCount(){
+    parseInt(document.getElementById('countDisplay').innerText="0");
+    count=0;
 }
