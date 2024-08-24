@@ -15,7 +15,7 @@ function addBook(){
         };
         books.push(book);
         showbooks();
-        clearInputs();        
+        clearInputs();       
     }else{
         alert(`Please fill in all fields correctly.`);
     }
@@ -26,16 +26,22 @@ function showbooks(){
         <p><strong>Book Name: </strong>${book.name}</p>
         <p><strong>Author Name:</strong> ${book.authorName}</p>
         <p><strong>Book Description:</strong> ${book.bookDescription}</p>
-        <p><strong>No. of Pages:</strong> ${book.pagesNumber} page(s)</p>`
+        <p><strong>No. of Pages:</strong> ${book.pagesNumber} page(s)</p>
+        <button onclick="deleteBook(${index})">Delete</button>`
     );
     document.getElementById('books').innerHTML = booksDiv.join('');
 }
 
-function clearInputs() {
+function clearInputs(){
     document.getElementById('bookName').value = '';
     document.getElementById('authorName').value = '';
     document.getElementById('bookDescription').value = '';
     document.getElementById('pagesNumber').value = '';
+}
+
+function deleteBook(selected){
+    const newList = books.splice(selected,1);
+    showbooks();    
 }
 
 
